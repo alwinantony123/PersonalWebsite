@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header class="">
+    <header class="navbar-head">
         <div class="row navbar1" id="navbar1">
             <div class="col-md-6 col-7 p-3 pl-5 my-auto">
                 <a class="nav-link" href="">
@@ -60,13 +60,13 @@
             </div>
         </div>
     </header>
-    <section class="section1">
+    <section class="section1" id="home-section">
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-md-3 col-12 pb-5 image-div">
                     <img class="img-fluid rounded-circle" src="Alwin2.png" alt="">
                 </div>
-                <div class="col-xl-5 col-md-6 col-9 pl-5 my-auto">
+                <div class="col-xl-5 col-md-6 col-12 pl-5 my-auto">
                     <div class="card mb-5">
                         <div class="card-body">
                             <h3 class="">IT Profesional <br> Ernakulam, kerala</h3>
@@ -273,10 +273,9 @@
                     $('.navbar1').addClass('hover1');
                     $('.navbar1').animate({height: "90px"},500);
                     $('.navbar1').stop()
-                    $(".navbar1").removeClass('button-animate');
                                         
                 } else {
-                    $(".navbar1").removeClass('button-animate');
+                    
                     $('.navbar1').removeClass('hover1');
                     $('.navbar1').animate({height: "150px"},500);
                 
@@ -288,9 +287,15 @@
         $(function () {
             num=1
             $("button").click(function(){
+                num=num+1
+                if(num==2){
                     $(".navbar1").addClass('button-animate');
                     $('.navbar1').animate({height: "300px"},500);
-                    
+                }
+                else{
+                    $(".navbar1").removeClass('button-animate');
+                    num=num-2;
+                }
               });
               
         });
